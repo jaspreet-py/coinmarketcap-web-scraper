@@ -31,16 +31,22 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Project Apps
+    "app.apps.AppConfig",
+    # Default Apps
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "app.apps.AppConfig",
+    # Extensions
+    "rest_framework",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
+    # Default Middlewares
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -48,6 +54,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # Extensions
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "myproject.urls"
@@ -122,3 +130,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CORS_ORIGIN_WHITELIST = ["http://localhost:8000"]
