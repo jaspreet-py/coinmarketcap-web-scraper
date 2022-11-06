@@ -20,7 +20,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
@@ -35,4 +34,46 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+table colgroup col {
+  min-width: auto;
+  max-width: auto;
+}
+
+table colgroup col:first-child,
+table colgroup col:last-child {
+  width: 50px;
+}
+
+table colgroup col:nth-child(2) {
+  width: 200px;
+}
+
+table colgroup col:nth-child(3) {
+  width: 100px;
+}
+
+table colgroup col:nth-child(4),
+table colgroup col:nth-child(5),
+table colgroup col:nth-child(6) {
+  width: 84px;
+}
+
+table colgroup col:nth-child(7),
+table colgroup col:nth-child(8),
+table colgroup col:nth-child(9) {
+  width: 200px;
+}
+
+table th,
+table td {
+  text-align: right;
+}
+
+table th:first-child,
+table td:first-child,
+table th:nth-child(2),
+table td:nth-child(2) {
+  text-align: left;
 }
