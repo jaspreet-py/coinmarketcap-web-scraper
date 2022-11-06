@@ -1,17 +1,8 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class Currency(models.Model):
-    class Meta:
-        ordering: list[str] = ["-mcap"]
-
-    def __str__(self) -> str:
-        return self.name
-
-    name = models.CharField(max_length=100)
-    symbol = models.CharField(max_length=10)
-    price = models.FloatField()
-    change = models.JSONField()
-    mcap = models.BigIntegerField()
-    volume = models.JSONField()
-    c_supply = models.BigIntegerField()
+    source = models.CharField(max_length=100, default="")
+    updated_on = models.DateTimeField(default=timezone.now)
+    data = models.JSONField(default=list)
