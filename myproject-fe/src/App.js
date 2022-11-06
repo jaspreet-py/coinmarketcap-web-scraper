@@ -24,7 +24,6 @@ class App extends Component {
   refreshData = async () => {
     const response = axios.get("/app/");
     const data = (await response).data[0]["data"];
-    console.log(data);
     this.setState({ data });
   };
 

@@ -10,7 +10,9 @@ from .serializers import CurrencySerializer
 # Create your views here.
 class IndexView(viewsets.ModelViewSet):
     serializer_class = CurrencySerializer
-    queryset = QuerySet(Currency.objects.last())
+
+    def get_queryset(self):
+        return [Currency.objects.last()]
 
     def create(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data)
